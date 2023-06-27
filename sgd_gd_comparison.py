@@ -35,7 +35,7 @@ model.compile(loss='sparse_categorical_crossentropy', optimizer=sgd, metrics=['a
 # Train the model with SGD
 print("Training with SGD...")
 start_time = time.time()
-sgd_history = model.fit(x_train, y_train, batch_size=32, epochs=50, validation_data=(x_val, y_val))
+sgd_history = model.fit(x_train, y_train, batch_size=32, epochs=25, validation_data=(x_val, y_val))
 sgd_time = time.time() - start_time
 
 # Compile the model with GD optimizer
@@ -45,7 +45,7 @@ model.compile(loss='sparse_categorical_crossentropy', optimizer=gd, metrics=['ac
 # Train the model with GD
 print("Training with GD...")
 start_time = time.time()
-gd_history = model.fit(x_train, y_train, batch_size=len(x_train), epochs=50, validation_data=(x_val, y_val))
+gd_history = model.fit(x_train, y_train, batch_size=len(x_train), epochs=25, validation_data=(x_val, y_val))
 gd_time = time.time() - start_time
 
 # Compare training histories
